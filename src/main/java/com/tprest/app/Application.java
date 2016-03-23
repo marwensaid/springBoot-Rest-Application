@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @EnableAutoConfiguration  // Sprint Boot Auto Configuration
-@ComponentScan(basePackages = "com.tprest.app") // spring Boot initializer
+@ComponentScan (basePackages = "com.tprest.app") // spring Boot initializer
 @EnableJpaRepositories("com.tprest.app.dao.jpa") // To segregate MongoDB and JPA repositories. Otherwise not needed.
 @EnableSwagger // auto generation of API docs
 public class Application extends SpringBootServletInitializer {
