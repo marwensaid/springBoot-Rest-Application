@@ -1,10 +1,12 @@
 package com.tprest.app.api.rest;
 
+import com.tprest.app.domain.RestErrorInfo;
+import com.tprest.app.exception.DataFormatException;
+import com.tprest.app.exception.ResourceNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationEventPublisherAware;
-import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -12,7 +14,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.context.request.WebRequest;
 
 import javax.servlet.http.HttpServletResponse;
-import java.util.zip.DataFormatException;
 
 /**
  * Created by marwen on 23/03/16.
@@ -42,7 +43,7 @@ public abstract class AbstractRestHandler implements ApplicationEventPublisherAw
     public
     @ResponseBody
     RestErrorInfo handleResourceNotFoundException(ResourceNotFoundException ex, WebRequest request, HttpServletResponse response) {
-        log.info("ResourceNotFoundException handler:" + ex.getMessage());
+        log.info("jj handler:" + ex.getMessage());
 
         return new RestErrorInfo(ex, "Sorry I couldn't find it.");
     }

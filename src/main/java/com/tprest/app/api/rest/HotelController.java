@@ -1,6 +1,7 @@
 package com.tprest.app.api.rest;
 
 import com.tprest.app.domain.Hotel;
+import com.tprest.app.service.HotelService;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiParam;
@@ -76,7 +77,7 @@ public class HotelController extends AbstractRestHandler{
     @ApiOperation(value = "Update a hotel resource.", notes = "You have to provide a valid hotel ID in the URL and in the payload. The ID attribute can not be updated.")
     public void updateHotel(@ApiParam(value = "The ID of the existing hotel resource.", required = true)
                             @PathVariable("id") Long id, @RequestBody Hotel hotel,
-                            HttpServletRequest request, HttpServletResponse response) {
+                            HttpServletRequest request, HttpServletResponse response) throws DataFormatException {
         checkResourceFound(this.hotelService.getHotel(id));
         if (id != hotel.getId()) throw new DataFormatException("ID doesn't match!");
         this.hotelService.updateHotel(hotel);
