@@ -1,6 +1,4 @@
-package com.tprest.entities;
-
-import org.springframework.data.annotation.Id;
+package com.tprest.app.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,42 +13,41 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 
 @Entity
-@Table(name = "instance")
+@Table(name = "hotel")
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Instance {
-
-    @Id
-    @GeneratedValue
-    private Long id;
+public class Hotel {
+    @javax.persistence.Id
+    @GeneratedValue()
+    private long id;
 
     @Column(nullable = false)
     private String name;
 
-    @Column
+    @Column()
     private String description;
 
-    @Column
+    @Column()
     String city;
 
-    @Column
+    @Column()
     private int rating;
 
-    public Instance() {
+    public Hotel() {
     }
 
-    public Instance(String name, String description, String city, int rating) {
+    public Hotel(String name, String description, int rating) {
         this.name = name;
         this.description = description;
-        this.city = city;
         this.rating = rating;
     }
 
-    public Long getId() {
-        return id;
+    public long getId() {
+        return this.id;
     }
 
-    public void setId(Long id) {
+    // for tests ONLY
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -70,14 +67,6 @@ public class Instance {
         this.description = description;
     }
 
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
     public int getRating() {
         return rating;
     }
@@ -86,9 +75,17 @@ public class Instance {
         this.rating = rating;
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
     @Override
     public String toString() {
-        return "Instance {" +
+        return "Hotel {" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
