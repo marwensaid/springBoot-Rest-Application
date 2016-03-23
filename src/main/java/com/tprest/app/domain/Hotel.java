@@ -91,6 +91,6 @@ public class Hotel {
                 ", description='" + description + '\'' +
                 ", city='" + city + '\'' +
                 ", rating=" + rating +
-                '}';
+                "}";
     }
 }

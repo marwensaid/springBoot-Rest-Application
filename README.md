@@ -25,6 +25,11 @@ Une fois que l'application fonctionne, vous devriez voir quelque chose comme ça
 2016-03-23 10:24:58.872  INFO 10190 --- [           main] com.khoubyari.example.Application        : Started Application in 6.764 seconds (JVM running for 7.06)
 ```
 
+## Pour Lancer les tests unitaire 
+* Vous pouvez faire un build Maven à l'ancienne ```mvn clean install```
+* Vous pouvez executer les tests directement de votre IDE (Intellij par exemple) = clique droit sur le test : Run Test
+* Assurez vous que le build Maven n'est pas Failure pour que toutes les dépendance soit installé correctement
+
 ## A propos du Service
 
 Le service est tout simplement un service REST d'hôtel simple. Il utilise une base de données en mémoire pour stocker les données. Vous pouvez également faire avec une base de données relationnelle comme MySQL ou PostgreSQL. Si vos propriétés de connexion de base de données fonctionnent, vous pouvez appeler certains paramètres REST définis dans ```com.tprest.app.api.rest.hotelController``` sur le port **8090**. (voir ci-dessous)
@@ -97,6 +102,9 @@ Content-Type: application/json
 
 RESPONSE: HTTP 204 (No Content)
 ```
+
+## Exemple avec curl
+``` curl -H 'Content-Type: application/json' -X PUT -d '[JSON]' http://localhost:8091/example/v1/hotels ```
 
 # A propos de Spring Boot
 
