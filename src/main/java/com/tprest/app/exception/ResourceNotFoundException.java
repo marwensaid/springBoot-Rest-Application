@@ -1,9 +1,12 @@
 package com.tprest.app.exception;
 
 /**
- * Created by marwen on 23/03/16.
+ * Created by marwen on 20/03/16.
  */
-public class ResourceNotFoundException extends RuntimeException{
+
+// HTTP 404 error
+
+public class ResourceNotFoundException extends RuntimeException {
 
     public ResourceNotFoundException() {
         super();

@@ -1,8 +1,11 @@
 package com.tprest.app.exception;
 
 /**
- * Created by marwen on 23/03/16.
+ * Created by marwen on 20/03/16.
  */
+
+// HTTP 400 Error
+
 public final class DataFormatException extends RuntimeException {
 
     public DataFormatException() {
