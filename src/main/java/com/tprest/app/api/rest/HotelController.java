@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.zip.DataFormatException;
 
 /**
- * Created by marwen on 02/03/16.
+ * Created by marwen
  */
 
 @RestController
@@ -65,7 +65,6 @@ public class HotelController extends AbstractRestHandler{
                    HttpServletRequest request, HttpServletResponse response) throws Exception {
         Hotel hotel = this.hotelService.getHotel(id);
         checkResourceFound(hotel);
-        //todo: http://goo.gl/6iNAkz
         return hotel;
     }
 
