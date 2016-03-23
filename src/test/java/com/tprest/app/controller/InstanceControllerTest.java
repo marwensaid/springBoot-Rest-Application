@@ -1,4 +1,4 @@
-package com.tprest.controller;
+package com.tprest.app.controller;
 
 import static org.junit.Assert.*;
 
