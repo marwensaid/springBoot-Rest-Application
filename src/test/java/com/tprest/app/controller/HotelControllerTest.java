@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tprest.app.Application;
 import com.tprest.app.api.rest.HotelController;
 import com.tprest.app.domain.Hotel;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -63,7 +64,8 @@ public class HotelControllerTest {
         mvc = MockMvcBuilders.webAppContextSetup(context).build();
     }
 
-    //@Test
+    //@Ignore
+    @Test
     public void shouldHaveEmptyDB() throws Exception {
         mvc.perform(get("/example/v1/hotels")
                 .accept(MediaType.APPLICATION_JSON))
@@ -105,7 +107,7 @@ public class HotelControllerTest {
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
 
-        //todo: you can test the 404 error body too.
+        //todo: Test les 404 error
 
 /*
 JSONAssert.assertEquals(

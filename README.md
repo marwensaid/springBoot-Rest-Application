@@ -1,6 +1,7 @@
 # Spring Boot REST Project 
 
 c'est une application Java / Maven / Spring Boot qui peut être utilisé comme un démarreur pour créer un Microservice complet avec built-in health check, metrics et bien d'autre.
+
 ## Comment faire le RUN 
 
 Cette application est packagé en war et posséde un Tomcat 7 embarqué. Aucune installation de Tomcat ou JBoss n'est obligatoire, Spring Boot possède un Tomcat embarqué. utilisez la commande ```java -jar```.
@@ -15,6 +16,7 @@ ou
         mvn spring-boot:run -Drun.arguments="spring.profiles.active=test"
 ```
 * Vérifier le stdout pour vous assurer qu'aucune des exceptions n'est levées
+* Si le Run ne marche pas virez le commentaire @Ignore sur le test souldHaveEmptyDB (activez le @Ignore)
 
 Une fois que l'application fonctionne, vous devriez voir quelque chose comme ça
 

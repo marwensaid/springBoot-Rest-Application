@@ -52,6 +52,3 @@ spring.jpa:
 
 hotel.service:
   name: 'test profile:'
-
-
-

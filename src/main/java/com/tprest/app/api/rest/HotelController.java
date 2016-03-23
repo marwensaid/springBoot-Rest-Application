@@ -83,6 +83,7 @@ public class HotelController extends AbstractRestHandler{
     }
 
     //todo: @ApiImplicitParams, @ApiResponses
+
     @RequestMapping(value = "/{id}",
             method = RequestMethod.DELETE,
             produces = {"application/json", "application/xml"})
